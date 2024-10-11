@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Yajuego IOS Functional Suite" verbose="1" parallel="tests" thread-count="1">
+
+    <parameter name="platform" value=""/>
+    <parameter name="isProdEnv" value="true"/>
+    <parameter name="islocalrun" value="false"/>
+    <parameter name="appName" value="Yajuego"/>
+    <parameter name="ssoAccount" value="false"/>
+    <parameter name="isAddCookies" value="false"/>
+
+    <test name="Yajuego IOS Functional Tests" parallel="methods" thread-count="1">
+
+        <classes>
+            <class name="org.ref_app_bp_test.Dth_Ref_tappp_All_Tests">
+
+                <methods>
+                    <include name="test_suite_1_TC00_verify_Environment_Change_functionality"/>
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+</suite>
