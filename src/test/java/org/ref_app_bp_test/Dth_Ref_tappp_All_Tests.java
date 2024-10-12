@@ -1,5 +1,6 @@
 package org.ref_app_bp_test;
 
+import com.org.yajuego.constant.Constant;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -33,7 +34,19 @@ public class Dth_Ref_tappp_All_Tests extends Ref_App_Launch_Close {
 
     //To test an application
 
-    // @Test
+    @Test
+    public void test_suite_1_TC10_Verify_after_entering_correct_otp_user_able_to_land_on_best_offer_page1() throws InterruptedException {
+        extentTest = extent.startTest("test_suite_1_TC10 Verify after entering correct otp user able to land on change profile page");
+        final var otp_page = new OTP_page(driver);
+        Offer_List_Page offer_list_page = new Offer_List_Page(driver);
+        Set<String> s = driver.getContextHandles();
+        driver.context("NATIVE_APP");
+        Assert.assertTrue(otp_page.continue_button_after_entering_correct_otp(), "test_suite_1_TC10: failed, User is not able to land on desired page after entering correct OTP");
+        offer_list_page.swipeToOffer("Goles", Constant.RIGHT);
+        offer_list_page.swipeToOfferAmount("6000", Constant.RIGHT);
+    }
+
+    @Test
     public void test_suite_1_TC00_verify_Environment_Change_functionality() throws InterruptedException {
         extentTest = extent.startTest("Test_Suite_1_TC00 Verify Environment Change functionality");
         final var environment_Page = new Environment_Page(driver);
@@ -457,6 +470,5 @@ public class Dth_Ref_tappp_All_Tests extends Ref_App_Launch_Close {
         //tearDown();
         Thread.sleep(5000);
     }
-
 
 }

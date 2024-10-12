@@ -3,7 +3,7 @@
 <suite name="Yajuego IOS Functional Suite" verbose="1" parallel="tests" thread-count="1">
 
     <parameter name="platform" value=""/>
-    <parameter name="isProdEnv" value="true"/>
+    <parameter name="isProdEnv" value="false"/>
     <parameter name="islocalrun" value="false"/>
     <parameter name="appName" value="Yajuego"/>
     <parameter name="ssoAccount" value="false"/>
@@ -15,7 +15,8 @@
             <class name="org.ref_app_bp_test.Dth_Ref_tappp_All_Tests">
 
                 <methods>
-                    <include name="test_suite_1_TC00_verify_Environment_Change_functionality"/>
+                    <include
+                            name="test_suite_1_TC10_Verify_after_entering_correct_otp_user_able_to_land_on_best_offer_page1"/>
                 </methods>
 
             </class>
