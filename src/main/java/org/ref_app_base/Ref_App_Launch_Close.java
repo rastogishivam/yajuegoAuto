@@ -21,6 +21,10 @@ public class Ref_App_Launch_Close extends BaseTest {
     //static protected AndroidDriver driver;//declaration of android driver
     static protected IOSDriver driver; // Declaration of iOS driver
 
+    public static IOSDriver getDriver() {
+        return driver;
+    }
+
     @BeforeClass
     public void configureAppium() throws MalformedURLException, InterruptedException {
 
@@ -29,10 +33,10 @@ public class Ref_App_Launch_Close extends BaseTest {
         // Set iOS specific capabilities
         options.setPlatformName("iOS");
         options.setAutomationName("XCUITest");
-        options.setDeviceName("iPhone 15");
-        options.setPlatformVersion("17.5");
-        options.setUdid("F0DEA1FB-5A84-4229-924D-1CF1617328F7");
-        options.setApp("/Users/kavyapathuri/Downloads/dtv-squeezeBack-ref-app.app");
+        options.setDeviceName("iPhone 15 Pro");
+        options.setPlatformVersion("17.2");
+        options.setUdid("C0037282-A479-493A-ABC2-AF7725008481");
+        options.setApp("/Users/test/Downloads/Workspace/dtv-squeezeBack-ref-app2.app");
         options.setBundleId("com.ios.dtv12-squeezeBack-ref-app.2");
         options.setCapability("showXcodeLog", true);
         options.setCapability("noReset", true);
@@ -51,7 +55,6 @@ public class Ref_App_Launch_Close extends BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.setSetting(Setting.IGNORE_UNIMPORTANT_VIEWS, true);
     }
-
 
     // to scroll emulator screen
     public void scrollToEnd() {
